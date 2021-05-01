@@ -11,7 +11,7 @@ class StringUtilsTest {
     @CsvSource(value = {"JHJ,hJJANG,Jang:3"}, delimiter = ':')
     void seperatorTest(String inputNames) {
 
-        String[] names = StringUtils.seperator(inputNames);
+        String[] names = StringUtils.separator(inputNames);
 
         assertThat(names.length).isEqualTo(3);
     }
