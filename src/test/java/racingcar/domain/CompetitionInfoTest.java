@@ -17,7 +17,7 @@ class CompetitionInfoTest {
 
     @BeforeEach
     void initObject() {
-        Car car = Car.create(CarName.create("AVANT"));
+        Car car = Car.create(CarName.create("AVANT"), 0);
         List<Car> carList = new ArrayList<>(Arrays.asList(car));
 
         this.cars = Cars.create(carList);

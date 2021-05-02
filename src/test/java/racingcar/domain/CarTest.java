@@ -14,7 +14,7 @@ public class CarTest {
     @BeforeEach
     private void createCar() {
         CarName name = CarName.create(carName);
-        car = Car.create(name);
+        car = Car.create(name, 0);
     }
 
     @DisplayName("차량의 생성 테스트")
