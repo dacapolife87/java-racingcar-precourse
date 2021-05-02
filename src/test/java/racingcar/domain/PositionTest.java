@@ -1,10 +1,12 @@
 package racingcar.domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,6 +18,14 @@ class PositionTest {
     void createPositionTest(int positionNumber) {
         Position position = Position.create(positionNumber);
         assertThat(position.getPosition()).isEqualTo(positionNumber);
+    }
+
+    @DisplayName("Position값이 음수가 들어올때 예외 테스트")
+    @Test
+    void negativeNumberPositionExceptionTest() {
+        assertThatThrownBy(
+                () -> Position.create(-1)
+        ).isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("Position객체의 이동 테스트")
@@ -45,5 +55,4 @@ class PositionTest {
 
         assertFalse(position.samePosition(Position.create(anotherPosition)));
     }
-
 }
