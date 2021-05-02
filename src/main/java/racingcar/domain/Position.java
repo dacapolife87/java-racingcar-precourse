@@ -6,6 +6,9 @@ public class Position {
 
     private Position(int position) {
         this.position = position;
+        if(position < 0) {
+            throw new IllegalArgumentException("위치값은 음수가 될수 없습니다.");
+        }
     }
 
     public static Position create(int position) {
