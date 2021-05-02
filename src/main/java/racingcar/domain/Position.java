@@ -2,11 +2,12 @@ package racingcar.domain;
 
 public class Position {
 
+    private static final int MINIMUM_POSITION = 0;
     private int position;
 
     private Position(int position) {
         this.position = position;
-        if(position < 0) {
+        if(position < MINIMUM_POSITION) {
             throw new IllegalArgumentException("위치값은 음수가 될수 없습니다.");
         }
     }
