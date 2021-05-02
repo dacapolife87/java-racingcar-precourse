@@ -21,8 +21,8 @@ public class Car {
         return position;
     }
 
-    public void race(MovingStandard movingStandard) {
-        if(movingStandard.isMoveJudge()) {
+    public void race(int number, MoveStrategy moveStrategy) {
+        if (moveStrategy.isMove(number)) {
             position++;
         }
     }
