@@ -18,7 +18,7 @@ class CarsTest {
 
     @BeforeEach
     void initCar() {
-        car = Car.create(CarName.create("AVANT"), 0);
+        car = Car.create(CarName.create("AVANT"), Position.create(0));
     }
 
     @DisplayName("Cars객체 생성 테스트")

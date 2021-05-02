@@ -40,7 +40,7 @@ class FinishRacingTest {
     }
 
     private Car makeCar(String name, int position) {
-        Car car = Car.create(CarName.create(name), position);
+        Car car = Car.create(CarName.create(name), Position.create(position));
         return car;
     }
 }

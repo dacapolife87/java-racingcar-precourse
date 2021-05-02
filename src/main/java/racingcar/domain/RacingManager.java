@@ -35,7 +35,7 @@ public class RacingManager {
 
         for (String playerName : playerNames) {
             CarName carName = CarName.create(playerName);
-            cars.add(Car.create(carName, 0));
+            cars.add(Car.create(carName, Position.create(0)));
         }
         return Cars.create(cars);
     }

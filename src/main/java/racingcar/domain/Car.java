@@ -3,14 +3,14 @@ package racingcar.domain;
 public class Car {
 
     private CarName name;
-    private int position;
+    private Position position;
 
-    private Car(CarName name, int position) {
+    private Car(CarName name, Position position) {
         this.name = name;
         this.position = position;
     }
 
-    public static Car create(CarName name, int position) {
+    public static Car create(CarName name, Position position) {
         return new Car(name, position);
     }
 
@@ -19,16 +19,16 @@ public class Car {
     }
 
     public int getPosition() {
-        return position;
+        return position.getPosition();
     }
 
     public void race(int number, MoveStrategy moveStrategy) {
         if (moveStrategy.isMove(number)) {
-            position++;
+            position.movePosition();
         }
     }
 
     public boolean isWinnerPosition(int winnerPosition) {
-        return winnerPosition == position;
+        return winnerPosition == position.getPosition();
     }
 }
