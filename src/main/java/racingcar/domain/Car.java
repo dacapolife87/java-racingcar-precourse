@@ -5,12 +5,13 @@ public class Car {
     private CarName name;
     private int position;
 
-    private Car(CarName name) {
+    private Car(CarName name, int position) {
         this.name = name;
+        this.position = position;
     }
 
-    public static Car create(CarName name) {
-        return new Car(name);
+    public static Car create(CarName name, int position) {
+        return new Car(name, position);
     }
 
     public CarName getName() {
@@ -25,5 +26,9 @@ public class Car {
         if (moveStrategy.isMove(number)) {
             position++;
         }
+    }
+
+    public boolean isWinnerPosition(int winnerPosition) {
+        return winnerPosition == position;
     }
 }
