@@ -23,7 +23,7 @@ class CompetitionInfoTest {
         this.cars = Cars.create(carList);
         this.round = new Round(5);
     }
-    
+
     @DisplayName("대회 기본정보 객체 생성 테스트")
     @Test
     void createCompetitionInfoTest() {

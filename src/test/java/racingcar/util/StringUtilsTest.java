@@ -17,14 +17,14 @@ class StringUtilsTest {
 
         assertThat(names.length).isEqualTo(3);
     }
-    
+
     @DisplayName("고정된 문자열 길이 변경테스트")
     @ParameterizedTest
-    @CsvSource(value = {"JHJ:5","JANG:5","HYUNG:5","JU:5"}, delimiter = ':')
+    @CsvSource(value = {"JHJ:5", "JANG:5", "HYUNG:5", "JU:5"}, delimiter = ':')
     void fixedLengthNameTest(String name, int length) {
         String fixedLengthName = StringUtils.fixedLengthString(name);
         assertThat(fixedLengthName.length()).isEqualTo(length);
     }
-    
+
 
 }
