@@ -29,14 +29,14 @@ public class CarTest {
     @DisplayName("차량의 이동 테스트")
     @Test
     void moveCarTest() {
-        car.race(MovingStandard.MOVE);
+        car.race(4, new RandomMoveStrategy());
         assertThat(car.getPosition()).isEqualTo(1);
     }
 
     @DisplayName("차량의 정지 테스트")
     @Test
     void stopCarTest() {
-        car.race(MovingStandard.STOP);
+        car.race(3, new RandomMoveStrategy());
         assertThat(car.getPosition()).isEqualTo(0);
     }
 }
