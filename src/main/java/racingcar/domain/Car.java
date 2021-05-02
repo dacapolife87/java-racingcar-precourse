@@ -28,7 +28,7 @@ public class Car {
         }
     }
 
-    public boolean isWinnerPosition(int winnerPosition) {
-        return winnerPosition == position.getPosition();
+    public boolean isWinnerPosition(Position winnerPosition) {
+        return winnerPosition.samePosition(position);
     }
 }

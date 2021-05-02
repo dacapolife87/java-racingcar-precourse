@@ -14,7 +14,7 @@ public class FinishRacing {
 
     public Cars judgeResult() {
         List<Car> listOfAllCars = allCars.listOfCars();
-        int winnerPosition = getWinnerPosition(listOfAllCars);
+        Position winnerPosition = getWinnerPosition(listOfAllCars);
 
         List<Car> winners = new ArrayList<>();
         for (Car car : listOfAllCars) {
@@ -24,19 +24,19 @@ public class FinishRacing {
         return Cars.create(winners);
     }
 
-    private void ifWinnerPositionAddCar(int winnerPosition, List<Car> winners, Car car) {
+    private void ifWinnerPositionAddCar(Position winnerPosition, List<Car> winners, Car car) {
         if (car.isWinnerPosition(winnerPosition)) {
             winners.add(car);
         }
     }
 
-    private int getWinnerPosition(List<Car> listOfCars) {
+    private Position getWinnerPosition(List<Car> listOfCars) {
         int winnerPosition = 0;
 
         for (Car car : listOfCars) {
             winnerPosition = Math.max(winnerPosition, car.getPosition());
         }
 
-        return winnerPosition;
+        return Position.create(winnerPosition);
     }
 }

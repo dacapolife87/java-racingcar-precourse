@@ -19,4 +19,8 @@ public class Position {
     public void movePosition() {
         position++;
     }
+
+    public boolean samePosition(Position position) {
+        return this.position == position.getPosition();
+    }
 }
