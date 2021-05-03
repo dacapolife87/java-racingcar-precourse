@@ -13,11 +13,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class FinishRacingTest {
 
-    @BeforeEach
-    void initCars() {
-
-    }
-
     @DisplayName("참여 Cars중에서 우승자를 판단하는 기능 테스트")
     @ParameterizedTest
     @CsvSource(value = {"1:3:3:2", "1:2:3:1", "1:1:3:1", "2:2:2:3"}, delimiter = ':')
@@ -40,7 +35,6 @@ class FinishRacingTest {
     }
 
     private Car makeCar(String name, int position) {
-        Car car = Car.create(CarName.create(name), Position.create(position));
-        return car;
+        return Car.create(CarName.create(name), Position.create(position));
     }
 }
