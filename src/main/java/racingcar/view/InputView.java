@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class InputView {
 
-    private static final String QUESTION_PLAYERS_NAME = "참여자들의 이름을 쉼표(,)로 구분하여 입력하세요";
-    private static final String QUESTION_COUNT_OF_ROUND = "이동할 횟수를 입력하세요.";
+    private static final String QUESTION_PLAYERS_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String QUESTION_COUNT_OF_ROUND = "시도할 회수는 몇회인가요?";
 
     public String inputPlayersName() {
         System.out.println(QUESTION_PLAYERS_NAME);
