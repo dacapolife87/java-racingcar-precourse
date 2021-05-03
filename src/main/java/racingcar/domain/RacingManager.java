@@ -20,9 +20,7 @@ public class RacingManager {
         Cars cars = initPlayers();
         Round round = initRacingRound();
 
-        CompetitionInfo competitionInfo = new CompetitionInfo(cars, round);
-
-        return competitionInfo;
+        return new CompetitionInfo(cars, round);
     }
 
     private Cars initPlayers() {
@@ -34,9 +32,9 @@ public class RacingManager {
         List<Car> cars = new ArrayList<>();
 
         for (String playerName : playerNames) {
-            CarName carName = CarName.create(playerName);
-            cars.add(Car.create(carName, Position.create(0)));
+            cars.add(Car.create(CarName.create(playerName), Position.create(0)));
         }
+
         return Cars.create(cars);
     }
 
@@ -47,6 +45,8 @@ public class RacingManager {
     public void start(CompetitionInfo competitionInfo) {
         int countOfRound = competitionInfo.getCountOfRound();
         Cars cars = competitionInfo.getCars();
+
+        System.out.println("경기시작");
         for (int i = 1; i <= countOfRound; i++) {
             playRound(cars, i);
         }
@@ -55,7 +55,7 @@ public class RacingManager {
     }
 
     private void finishRacing(Cars cars) {
-        resultView.showWinners(getWinnerCars(cars).listOfCars());
+        resultView.showWinners(getWinnerCars(cars));
     }
 
     private Cars getWinnerCars(Cars cars) {
@@ -66,7 +66,7 @@ public class RacingManager {
     private void playRound(Cars cars, int i) {
         System.out.println("[" + i + "] Round ");
         cars.round(new RandomMoveStrategy());
-        resultView.showRoundResult(cars.listOfCars());
+        resultView.showRoundResult(cars);
         System.out.println("===========================================");
     }
 }

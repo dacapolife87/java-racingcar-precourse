@@ -2,6 +2,7 @@ package racingcar.view;
 
 import racingcar.domain.Car;
 import racingcar.domain.CarName;
+import racingcar.domain.Cars;
 import racingcar.util.StringUtils;
 
 import java.util.List;
@@ -14,8 +15,10 @@ public class ResultView {
     private static final String CAR_DELIMITER_NAMES = ", ";
     private static final String MESSAGE_WINNERS_INTRODUCE = "우승자는 %s 입니다.";
 
-    public void showRoundResult(List<Car> cars) {
-        for (Car car : cars) {
+    public void showRoundResult(Cars cars) {
+        List<Car> carList = cars.listOfCars();
+
+        for (Car car : carList) {
             showCarRoundResult(car);
         }
     }
@@ -39,14 +42,15 @@ public class ResultView {
         return sb.toString();
     }
 
-    public void showWinners(List<Car> cars) {
+    public void showWinners(Cars cars) {
+        List<Car> carList = cars.listOfCars();
+
         StringJoiner joiner = new StringJoiner(CAR_DELIMITER_NAMES);
-        for (Car car : cars) {
+        for (Car car : carList) {
             joiner.add(getWinnersName(car.getName()));
         }
 
-        String winnerMessage = makeWinnerMessage(joiner.toString());
-        System.out.println(winnerMessage);
+        System.out.println(makeWinnerMessage(joiner.toString()));
     }
 
     private String makeWinnerMessage(String winners) {
