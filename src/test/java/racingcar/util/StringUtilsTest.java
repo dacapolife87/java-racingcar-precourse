@@ -11,7 +11,7 @@ class StringUtilsTest {
     @DisplayName("쉼표로 구분된 문자열 분리 테스트")
     @ParameterizedTest
     @CsvSource(value = {"JHJ,hJJANG,Jang:3"}, delimiter = ':')
-    void seperatorTest(String inputNames,int size) {
+    void seperatorTest(String inputNames, int size) {
 
         String[] names = StringUtils.separator(inputNames);
 

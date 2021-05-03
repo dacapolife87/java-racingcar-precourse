@@ -7,7 +7,7 @@ public class Position {
 
     private Position(int position) {
         this.position = position;
-        if(position < MINIMUM_POSITION) {
+        if (position < MINIMUM_POSITION) {
             throw new IllegalArgumentException("위치값은 음수가 될수 없습니다.");
         }
     }
