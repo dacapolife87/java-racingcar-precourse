@@ -9,6 +9,10 @@ import java.util.List;
 
 public class RacingManager {
 
+    private static final String START_RACING = "경기시작";
+    private static final String ROUND_DIVIDER = "===========================================";
+    private static final String ROUND_MESSAGE = "[ %s ] Round ";
+
     private final InputView inputView = new InputView();
     private final ResultView resultView = new ResultView();
 
@@ -46,7 +50,7 @@ public class RacingManager {
         int countOfRound = competition.getCountOfRound();
         Cars cars = competition.getCars();
 
-        System.out.println("경기시작");
+        System.out.println(START_RACING);
         for (int i = 1; i <= countOfRound; i++) {
             playRound(cars, i);
         }
@@ -64,9 +68,9 @@ public class RacingManager {
     }
 
     private void playRound(Cars cars, int i) {
-        System.out.println("[" + i + "] Round ");
+        System.out.println(String.format(ROUND_MESSAGE, i));
         cars.round(new RandomMoveStrategy());
         resultView.showRoundResult(cars);
-        System.out.println("===========================================");
+        System.out.println(ROUND_DIVIDER);
     }
 }
