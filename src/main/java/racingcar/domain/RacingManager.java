@@ -16,11 +16,11 @@ public class RacingManager {
         start(readyGame());
     }
 
-    public CompetitionInfo readyGame() {
+    public Competition readyGame() {
         Cars cars = initPlayers();
         Round round = initRacingRound();
 
-        return new CompetitionInfo(cars, round);
+        return new Competition(cars, round);
     }
 
     private Cars initPlayers() {
@@ -42,9 +42,9 @@ public class RacingManager {
         return new Round(inputView.inputCountOfRound());
     }
 
-    public void start(CompetitionInfo competitionInfo) {
-        int countOfRound = competitionInfo.getCountOfRound();
-        Cars cars = competitionInfo.getCars();
+    public void start(Competition competition) {
+        int countOfRound = competition.getCountOfRound();
+        Cars cars = competition.getCars();
 
         System.out.println("경기시작");
         for (int i = 1; i <= countOfRound; i++) {

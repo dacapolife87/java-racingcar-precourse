@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CompetitionInfoTest {
+class CompetitionTest {
 
     private Cars cars;
     private Round round;
@@ -26,11 +26,11 @@ class CompetitionInfoTest {
 
     @DisplayName("대회 기본정보 객체 생성 테스트")
     @Test
-    void createCompetitionInfoTest() {
-        CompetitionInfo competitionInfo = new CompetitionInfo(cars, round);
+    void createCompetitionTest() {
+        Competition competition = new Competition(cars, round);
 
-        assertThat(competitionInfo.getCars()).isEqualTo(cars);
-        assertThat(competitionInfo.getCountOfRound()).isEqualTo(round.getRound());
+        assertThat(competition.getCars()).isEqualTo(cars);
+        assertThat(competition.getCountOfRound()).isEqualTo(round.getRound());
     }
 
 
