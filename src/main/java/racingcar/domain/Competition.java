@@ -3,7 +3,6 @@ package racingcar.domain;
 public class Competition {
 
     private Cars cars;
-
     private Round countOfRound;
 
     public Competition(Cars cars, Round countOfRound) {

@@ -8,8 +8,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarTest {
 
-    String carName = "test";
-    Car car;
+    private String carName = "test";
+    private Car car;
 
     @BeforeEach
     private void createCar() {

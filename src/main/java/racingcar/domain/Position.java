@@ -3,6 +3,7 @@ package racingcar.domain;
 public class Position {
 
     private static final int MINIMUM_POSITION = 0;
+
     private int position;
 
     private Position(int position) {

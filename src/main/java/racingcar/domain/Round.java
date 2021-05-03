@@ -3,6 +3,7 @@ package racingcar.domain;
 public class Round {
 
     private static final int MINIMUM_ROUND = 1;
+
     private int countOfRound;
 
     public Round(int countOfRound) {

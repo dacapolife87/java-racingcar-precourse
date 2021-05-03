@@ -6,6 +6,7 @@ public class CarName {
 
     private static final int NAME_LENGTH_MINIMUM_SIZE = 1;
     private static final int NAME_LENGTH_MAXIMUM_SIZE = 5;
+
     private String name;
 
     private CarName(String name) {
