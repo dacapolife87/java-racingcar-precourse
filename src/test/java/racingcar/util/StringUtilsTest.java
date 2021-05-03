@@ -11,11 +11,11 @@ class StringUtilsTest {
     @DisplayName("쉼표로 구분된 문자열 분리 테스트")
     @ParameterizedTest
     @CsvSource(value = {"JHJ,hJJANG,Jang:3"}, delimiter = ':')
-    void seperatorTest(String inputNames) {
+    void seperatorTest(String inputNames,int size) {
 
         String[] names = StringUtils.separator(inputNames);
 
-        assertThat(names.length).isEqualTo(3);
+        assertThat(names.length).isEqualTo(size);
     }
 
     @DisplayName("고정된 문자열 길이 변경테스트")
